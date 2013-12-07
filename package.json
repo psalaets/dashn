@@ -10,5 +10,8 @@
   "license": "MIT",
   "devDependencies": {
     "nodeunit": "~0.8.2"
+  },
+  "dependencies": {
+    "event-stream": "~3.0.18"
   }
 }
