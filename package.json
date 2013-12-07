@@ -4,8 +4,11 @@
   "description": "Rough equivalent to ruby -n",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/nodeunit/bin/nodeunit test"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodeunit": "~0.8.2"
+  }
 }
