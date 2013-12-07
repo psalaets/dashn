@@ -13,7 +13,7 @@ module.exports['dashn'] = {
     test.deepEqual(actual, ['a', 'b', 'c']);
     test.done();
   },
-  "last data chunk is empty string when input ends with newline": function(test) {
+  "when input ends with newline, last data chunk is not empty string": function(test) {
     var actual = [];
 
     var d = dashn(function(data) {
@@ -22,7 +22,7 @@ module.exports['dashn'] = {
 
     d.end("a\nb\nc\n");
 
-    test.deepEqual(actual, ['a', 'b', 'c', '']);
+    test.deepEqual(actual, ['a', 'b', 'c']);
     test.done();
   }
 };
