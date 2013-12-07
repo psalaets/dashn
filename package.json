@@ -13,5 +13,8 @@
   },
   "dependencies": {
     "event-stream": "~3.0.18"
+  },
+  "bin": {
+    "dashn": "./bin/dashn"
   }
 }
