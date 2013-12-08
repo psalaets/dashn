@@ -40,7 +40,7 @@ HOUSE
 
 ## Installation
 
-TODO submit to npm
+`npm install -g dashn`
 
 ## License
 
