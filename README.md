@@ -8,19 +8,13 @@ Roughly equivalent to `ruby -ne '<code>' file1 … filen`
 
 ### Free Variables
 
-`<code>` can reference any of the following
+`<code>` can reference any of the following:
 
-#### line (String)
+line (String) - Current line of input. Trailing newline has been stripped.
 
-Current line of input. Trailing newline has been stripped.
+log (Function) - Alias for `console.log`.
 
-#### log (Function)
-
-Alias for `console.log`.
-
-#### error (Function)
-
-Alias for `console.error`.
+error (Function) - Alias for `console.error`.
 
 ## Example
 
