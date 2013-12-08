@@ -9,7 +9,7 @@ function pathTo(filename) {
 var bin = __dirname + '/../bin/dashn';
 
 module.exports['command line'] = {
-  "running expression on one file": function(test) {
+  "line is current line of input": function(test) {
     var expr = 'console.log(line + "!");';
     var child = spawn(bin, ['-e', expr, pathTo('file1')]);
 
@@ -18,7 +18,25 @@ module.exports['command line'] = {
       test.done();
     }));
   },
-  "running expression on multiple files": function(test) {
+  "log is console.log": function(test) {
+    var expr = 'log(line + "!");';
+    var child = spawn(bin, ['-e', expr, pathTo('file1')]);
+
+    child.stdout.pipe(concat(function(data) {
+      test.equal(data.toString(), "a!\nb!\nc!\n");
+      test.done();
+    }));
+  },
+  "error is console.error": function(test) {
+    var expr = 'error(line + "!");';
+    var child = spawn(bin, ['-e', expr, pathTo('file1')]);
+
+    child.stderr.pipe(concat(function(data) {
+      test.equal(data.toString(), "a!\nb!\nc!\n");
+      test.done();
+    }));
+  },
+  "can take multiple files": function(test) {
     var expr = 'console.log(line + "!");';
     var child = spawn(bin, ['-e', expr, pathTo('file1'), pathTo('file1')]);
 

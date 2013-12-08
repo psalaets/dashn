@@ -12,6 +12,10 @@ c.pipe(dashn(makeWriteFunction(expression)));
 c.end(filenames.join('\n'));
 
 function makeWriteFunction(expression) {
-  var body = "var line = data.toString();" + expression;
+  var body =
+    "var log = console.log.bind(console);" +
+    "var error = console.error.bind(console);" +
+    "var line = data.toString();" +
+    expression;
   return new Function('data', body);
 }
