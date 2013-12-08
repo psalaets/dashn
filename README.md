@@ -10,19 +10,19 @@ TODO submit to npm
 
 `dashn -e '<code>' file1 … filen`
 
-## Free Variables
+### Free Variables
 
 `<code>` can reference any of the following
 
-### line (String)
+#### line (String)
 
 Current line of input. Trailing newline has been stripped.
 
-### log (Function)
+#### log (Function)
 
 Alias for `console.log`.
 
-### error (Function)
+#### error (Function)
 
 Alias for `console.error`.
 
