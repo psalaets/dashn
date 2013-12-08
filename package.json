@@ -9,10 +9,12 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "nodeunit": "~0.8.2"
+    "nodeunit": "~0.8.2",
+    "concat-stream": "~1.2.1"
   },
   "dependencies": {
-    "event-stream": "~3.0.18"
+    "event-stream": "~3.0.18",
+    "catstream": "~1.0.2"
   },
   "bin": {
     "dashn": "./bin/dashn"

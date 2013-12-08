@@ -1,3 +1,17 @@
 #!/usr/bin/env node
 
-console.log('ok')
+var cat = require('catstream');
+var dashn = require('..');
+
+var expression = process.argv.slice(3, 4);
+var filenames = process.argv.slice(4);
+
+var c = cat();
+
+c.pipe(dashn(makeWriteFunction(expression)));
+c.end(filenames.join('\n'));
+
+function makeWriteFunction(expression) {
+  var body = "var line = data.toString();" + expression;
+  return new Function('data', body);
+}
