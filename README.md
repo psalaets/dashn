@@ -14,7 +14,7 @@ TODO submit to npm
 
 `<code>` can reference any of the following
 
-### line
+### line (String)
 
 Current line from input files. Trailing newline has been stripped.
 

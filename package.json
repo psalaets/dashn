@@ -1,12 +1,12 @@
 {
   "name": "dashn",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Rough equivalent to ruby -n",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/nodeunit/bin/nodeunit test"
   },
-  "author": "",
+  "author": "Paul Salaets <psalaets@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "nodeunit": "~0.8.2",
@@ -18,5 +18,10 @@
   },
   "bin": {
     "dashn": "./bin/dashn"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psalaets/dashn.git"
+  },
+  "homepage": "https://github.com/psalaets/dashn"
 }
