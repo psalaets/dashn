@@ -1,6 +1,8 @@
 # dashn
 
-Roughly equivalent to `ruby -ne '<code>' file1 … filen`
+From the command line, run a bit of code for every line in some file(s).
+
+Roughly equivalent to `ruby -ne '<code>' file1 … filen`.
 
 ## Usage
 

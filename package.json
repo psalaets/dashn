@@ -1,7 +1,7 @@
 {
   "name": "dashn",
-  "version": "0.1.0",
-  "description": "Rough equivalent to ruby -n",
+  "version": "0.1.1",
+  "description": "From the cli, run code for every line in some file(s).",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/nodeunit/bin/nodeunit test"
@@ -23,5 +23,6 @@
     "type": "git",
     "url": "https://github.com/psalaets/dashn.git"
   },
-  "homepage": "https://github.com/psalaets/dashn"
+  "homepage": "https://github.com/psalaets/dashn",
+  "keywords": ["cli"]
 }
