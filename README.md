@@ -16,7 +16,15 @@ TODO submit to npm
 
 ### line (String)
 
-Current line from input files. Trailing newline has been stripped.
+Current line of input. Trailing newline has been stripped.
+
+### log (Function)
+
+Alias for `console.log`.
+
+### error (Function)
+
+Alias for `console.error`.
 
 ## Example
 
@@ -30,7 +38,7 @@ house
 
 Running
 
-`dashn -e 'console.log(line.toUpperCase())' a.txt`
+`dashn -e 'log(line.toUpperCase())' a.txt`
 
 prints
 
