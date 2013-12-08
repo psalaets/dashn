@@ -2,10 +2,6 @@
 
 Roughly equivalent to `ruby -ne '<code>' file1 … filen`
 
-## Install
-
-TODO submit to npm
-
 ## Usage
 
 `dashn -e '<code>' file1 … filen`
@@ -47,6 +43,10 @@ DOG
 CAT
 HOUSE
 ```
+
+## Installation
+
+TODO submit to npm
 
 ## License
 
