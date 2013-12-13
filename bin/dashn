@@ -3,8 +3,14 @@
 var cat = require('catstream');
 var dashn = require('..');
 
-var expression = process.argv.slice(3, 4);
-var filenames = process.argv.slice(4);
+var args = process.argv.slice();
+args.shift(); // discard node :(
+args.shift(); // discard script name
+
+if (args[0] === '-e') args.shift(); // discard unused flag
+
+var expression = args.slice(0, 1);
+var filenames = args.slice(1);
 
 var c = cat();
 

@@ -44,5 +44,14 @@ module.exports['command line'] = {
       test.equal(data.toString(), "a!\nb!\nc!\na!\nb!\nc!\n");
       test.done();
     }));
+  },
+  "-e is optional": function(test) {
+    var expr = 'console.log(line + "!");';
+    var child = spawn(bin, [expr, pathTo('file1')]);
+
+    child.stdout.pipe(concat(function(data) {
+      test.equal(data.toString(), "a!\nb!\nc!\n");
+      test.done();
+    }));
   }
 };
