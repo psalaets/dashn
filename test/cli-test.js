@@ -11,7 +11,7 @@ var bin = __dirname + '/../bin/dashn';
 module.exports['command line'] = {
   "line is current line of input": function(test) {
     var expr = 'console.log(line + "!");';
-    var child = spawn(bin, ['-e', expr, pathTo('file1')]);
+    var child = spawn(bin, [expr, pathTo('file1')]);
 
     child.stdout.pipe(concat(function(data) {
       test.equal(data.toString(), "a!\nb!\nc!\n");
@@ -20,7 +20,7 @@ module.exports['command line'] = {
   },
   "log is console.log": function(test) {
     var expr = 'log(line + "!");';
-    var child = spawn(bin, ['-e', expr, pathTo('file1')]);
+    var child = spawn(bin, [expr, pathTo('file1')]);
 
     child.stdout.pipe(concat(function(data) {
       test.equal(data.toString(), "a!\nb!\nc!\n");
@@ -29,7 +29,7 @@ module.exports['command line'] = {
   },
   "error is console.error": function(test) {
     var expr = 'error(line + "!");';
-    var child = spawn(bin, ['-e', expr, pathTo('file1')]);
+    var child = spawn(bin, [expr, pathTo('file1')]);
 
     child.stderr.pipe(concat(function(data) {
       test.equal(data.toString(), "a!\nb!\nc!\n");
@@ -38,16 +38,16 @@ module.exports['command line'] = {
   },
   "can take multiple files": function(test) {
     var expr = 'console.log(line + "!");';
-    var child = spawn(bin, ['-e', expr, pathTo('file1'), pathTo('file1')]);
+    var child = spawn(bin, [expr, pathTo('file1'), pathTo('file1')]);
 
     child.stdout.pipe(concat(function(data) {
       test.equal(data.toString(), "a!\nb!\nc!\na!\nb!\nc!\n");
       test.done();
     }));
   },
-  "-e is optional": function(test) {
+  "legacy '-e' preceding expression is supported": function(test) {
     var expr = 'console.log(line + "!");';
-    var child = spawn(bin, [expr, pathTo('file1')]);
+    var child = spawn(bin, ['-e', expr, pathTo('file1')]);
 
     child.stdout.pipe(concat(function(data) {
       test.equal(data.toString(), "a!\nb!\nc!\n");

@@ -6,7 +6,7 @@ Roughly equivalent to `ruby -ne '<code>' file1 … filen`.
 
 ## Usage
 
-`dashn -e '<code>' file1 … filen`
+`dashn '<code>' file1 … filen`
 
 ### Free Variables
 
@@ -30,7 +30,7 @@ house
 
 Running
 
-`dashn -e 'log(line.toUpperCase())' a.txt`
+`dashn 'log(line.toUpperCase())' a.txt`
 
 prints
 
