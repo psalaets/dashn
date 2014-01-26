@@ -53,5 +53,29 @@ module.exports['command line'] = {
       test.equal(data.toString(), "a!\nb!\nc!\n");
       test.done();
     }));
+  },
+  "reads from stdin when no files are listed on command line": function(test) {
+    var expr = 'console.log(line + "?");';
+    var child = spawn(bin, [expr]);
+
+    child.stdout.pipe(concat(function(data) {
+      test.equal(data.toString(), "first?\nsecond?\n");
+      test.done();
+    }));
+
+    child.stdin.write('first\n');
+    child.stdin.end('second\n');
+  },
+  "ignores stdin when one or more files are listed on command line": function(test) {
+    var expr = 'console.log(line + "?");';
+    var child = spawn(bin, [expr, pathTo('file1')]);
+
+    child.stdout.pipe(concat(function(data) {
+      test.equal(data.toString(), "a?\nb?\nc?\n");
+      test.done();
+    }));
+
+    child.stdin.write('first\n');
+    child.stdin.end('second\n');
   }
 };

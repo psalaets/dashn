@@ -12,10 +12,15 @@ if (args[0] === '-e') args.shift(); // discard unused flag
 var expression = args.slice(0, 1);
 var filenames = args.slice(1);
 
-var cat = catstream();
+var sink = dashn(makeWriteFunction(expression));
 
-cat.pipe(dashn(makeWriteFunction(expression)));
-cat.end(filenames.join('\n'));
+if (filenames.length) {
+  var cat = catstream();
+  cat.pipe(sink);
+  cat.end(filenames.join('\n'));
+} else {
+  process.stdin.pipe(sink);
+}
 
 function makeWriteFunction(expression) {
   var body =
