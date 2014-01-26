@@ -45,15 +45,6 @@ module.exports['command line'] = {
       test.done();
     }));
   },
-  "legacy '-e' preceding expression is supported": function(test) {
-    var expr = 'console.log(line + "!");';
-    var child = spawn(bin, ['-e', expr, pathTo('file1')]);
-
-    child.stdout.pipe(concat(function(data) {
-      test.equal(data.toString(), "a!\nb!\nc!\n");
-      test.done();
-    }));
-  },
   "reads from stdin when no files are listed on command line": function(test) {
     var expr = 'console.log(line + "?");';
     var child = spawn(bin, [expr]);
