@@ -1,6 +1,6 @@
 {
   "name": "dashn",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "From the cli, run code for every line in some file(s).",
   "main": "index.js",
   "scripts": {
