@@ -1,7 +1,7 @@
 {
   "name": "dashn",
   "version": "1.0.0",
-  "description": "From the cli, run code for every line in some file(s).",
+  "description": "From the command line, run code for every line in some text.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/nodeunit/bin/nodeunit test"
