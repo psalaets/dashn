@@ -1,12 +1,18 @@
 # dashn
 
-From the command line, run a bit of code for every line in some file(s).
+From the command line, run code for every line in some text.
 
 Roughly equivalent to `ruby -ne '<code>' file1 … filen`.
 
 ## Usage
 
+### Read from files
+
 `dashn '<code>' file1 … filen`
+
+### Read from stdin
+
+`cat a.txt | dashn '<code>'`
 
 ### Free Variables
 
