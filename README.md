@@ -20,6 +20,8 @@ Roughly equivalent to `ruby -ne '<code>' file1 … filen`.
 
 line (String) - Current line of input. Trailing newline has been stripped.
 
+num (Number) - Current line number of input. Starts at 1.
+
 log (Function) - Alias for `console.log`.
 
 error (Function) - Alias for `console.error`.

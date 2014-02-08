@@ -21,10 +21,16 @@ if (filenames.length) {
 }
 
 function wrap(expression) {
-  var body =
-    "var log = console.log.bind(console);" +
-    "var error = console.error.bind(console);" +
-    "var line = data.toString();" +
-    expression;
-  return new Function('data', body);
+  var body = [
+    'var num = 0',
+    'var log = console.log.bind(console)',
+    'var error = console.error.bind(console)',
+    'return function(data) {',
+    '  num += 1',
+    '  var line = data.toString()',
+    '  ;' + expression + ';',
+    '}'
+  ].join('\n')
+
+  return new Function(body)();
 }

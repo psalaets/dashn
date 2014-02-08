@@ -18,6 +18,15 @@ module.exports['command line'] = {
       test.done();
     }));
   },
+  "num is current line number of input": function(test) {
+    var expr = 'console.log(num);';
+    var child = spawn(bin, [expr, pathTo('file1')]);
+
+    child.stdout.pipe(concat(function(data) {
+      test.equal(data.toString(), "1\n2\n3\n");
+      test.done();
+    }));
+  },
   "log is console.log": function(test) {
     var expr = 'log(line + "!");';
     var child = spawn(bin, [expr, pathTo('file1')]);
